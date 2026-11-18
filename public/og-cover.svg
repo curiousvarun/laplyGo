@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="LaplyGo — stopwatch, countdown timer, and focus world">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eef2ff" />
+      <stop offset="0.55" stop-color="#fafafa" />
+      <stop offset="1" stop-color="#f5f3ff" />
+    </linearGradient>
+    <linearGradient id="mark" x1="80" y1="64" x2="224" y2="208" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818cf8" />
+      <stop offset="0.5" stop-color="#4f46e5" />
+      <stop offset="1" stop-color="#7c3aed" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.25" r="0.7">
+      <stop stop-color="#6366f1" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+  <circle cx="1010" cy="120" r="210" fill="none" stroke="#6366f1" stroke-opacity="0.1" stroke-width="2" />
+  <circle cx="1010" cy="120" r="150" fill="none" stroke="#6366f1" stroke-opacity="0.12" stroke-width="2" />
+
+  <g transform="translate(88 70)">
+    <rect width="152" height="152" rx="42" fill="url(#mark)" />
+    <path d="M62 28h28" stroke="#fff" stroke-width="10" stroke-linecap="round" />
+    <path d="M76 28v15" stroke="#fff" stroke-width="10" stroke-linecap="round" />
+    <circle cx="76" cy="86" r="37" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="9" />
+    <path d="M76 49a37 37 0 0 1 33.5 53" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" />
+    <path d="M76 86V66" stroke="#fff" stroke-width="10" stroke-linecap="round" />
+    <circle cx="76" cy="86" r="7" fill="#a5f3fc" />
+    <path d="m113 48 6-6" stroke="#a5f3fc" stroke-width="9" stroke-linecap="round" />
+  </g>
+
+  <text x="280" y="168" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="62" font-weight="800" letter-spacing="-2.5" fill="#18181b">Laply<tspan fill="#4f46e5">Go</tspan></text>
+  <text x="88" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="#6366f1">STOPWATCH · COUNTDOWN · FOCUS WORLD</text>
+  <text x="88" y="398" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="54" font-weight="800" letter-spacing="-2" fill="#18181b">Focus, breaks, and splits —</text>
+  <text x="88" y="462" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="54" font-weight="800" letter-spacing="-2" fill="#18181b">counted to the millisecond.</text>
+
+  <rect x="88" y="508" width="512" height="58" rx="29" fill="#ffffff" stroke="#e4e4e7" />
+  <text x="118" y="545" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#52525b">00:00:00.000</text>
+  <text x="300" y="545" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" fill="#a1a1aa">Studying · Interval 01</text>
+
+  <rect x="700" y="300" width="412" height="240" rx="30" fill="#ffffff" stroke="#e4e4e7" />
+  <rect x="700" y="300" width="6" height="240" rx="3" fill="#6366f1" />
+  <circle cx="744" cy="348" r="10" fill="#6366f1" />
+  <text x="770" y="356" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#18181b">Focus interval 01</text>
+  <text x="744" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="800" fill="#18181b">00:25:10.412</text>
+  <text x="744" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="16" font-weight="600" fill="#a1a1aa">Cumulative 00:25:10.412</text>
+  <line x1="744" y1="454" x2="1068" y2="454" stroke="#f4f4f5" />
+  <rect x="744" y="474" width="6" height="42" rx="3" fill="#f59e0b" />
+  <circle cx="768" cy="494" r="8" fill="#f59e0b" />
+  <text x="790" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="700" fill="#18181b">Break 01</text>
+  <text x="1000" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="800" fill="#b45309">00:05:00.000</text>
+
+  <text x="88" y="600" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="17" font-weight="600" fill="#71717a">One click or Space to start · Local-first · Free forever</text>
+</svg>

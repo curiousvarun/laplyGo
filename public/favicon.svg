@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LaplyGo">
+  <defs>
+    <linearGradient id="laply-brand" x1="6" y1="2" x2="58" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818cf8" />
+      <stop offset="0.5" stop-color="#4f46e5" />
+      <stop offset="1" stop-color="#7c3aed" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#laply-brand)" />
+  <path d="M26 12h12" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round" />
+  <path d="M32 12v6.2" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round" />
+  <circle cx="32" cy="36" r="15.5" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="4" />
+  <path d="M32 20.5A15.5 15.5 0 0 1 46 42.6" fill="none" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round" />
+  <path d="M32 36v-8.2" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round" />
+  <circle cx="32" cy="36" r="3" fill="#a5f3fc" />
+  <path d="M47.6 20.2 50 17.8" stroke="#a5f3fc" stroke-width="3.8" stroke-linecap="round" />
+</svg>

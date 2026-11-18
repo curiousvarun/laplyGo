@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="canonical" href="https://laplygo.app/" />
+
+    <title>LaplyGo — Precision Stopwatch, Countdown Timer &amp; Focus Tracker</title>
+    <meta
+      name="description"
+      content="LaplyGo is a free millisecond-precision stopwatch and countdown timer for deep work. Start in one click, split checkpoints, automatically separate focus from breaks, grow a calm Focus World, and review clean analytics and a vertical history timeline."
+    />
+    <meta
+      name="keywords"
+      content="online stopwatch, millisecond stopwatch, countdown timer, study timer, deep work tracker, focus timer, break tracker, split timer, productivity timer, focus garden, LaplyGo"
+    />
+    <meta name="author" content="LaplyGo" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="application-name" content="LaplyGo" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="LaplyGo" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LaplyGo" />
+    <meta property="og:title" content="LaplyGo — Precision Stopwatch, Countdown Timer &amp; Focus Tracker" />
+    <meta
+      property="og:description"
+      content="A precise stopwatch, a calm countdown, automatic focus and break tracking, a growing Focus World, and clear analytics. Local-first, private, and beautifully simple."
+    />
+    <meta property="og:url" content="https://laplygo.app/" />
+    <meta property="og:image" content="https://laplygo.app/og-cover.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LaplyGo — stopwatch, countdown timer, and focus tracker" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LaplyGo — Precision Stopwatch, Countdown Timer &amp; Focus Tracker" />
+    <meta
+      name="twitter:description"
+      content="Millisecond precision, countdown presets, automatic break tracking, a peaceful Focus World, and clean personal analytics. Start in one click."
+    />
+    <meta name="twitter:image" content="https://laplygo.app/og-cover.svg" />
+    <meta name="twitter:image:alt" content="LaplyGo focus tracker interface" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "LaplyGo",
+        "url": "https://laplygo.app/",
+        "description": "A free, millisecond-precision stopwatch and countdown timer for deep work, study, coding, reading, writing, working, and personal projects. Automatically separates active focus time from breaks, records a complete activity timeline, and grows a calm personal Focus World.",
+        "applicationCategory": "ProductivityApplication",
+        "applicationSubCategory": "Time Tracking",
+        "operatingSystem": "Any modern web browser",
+        "browserRequirements": "Requires JavaScript and localStorage.",
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Millisecond precision HH:MM:SS.MMM stopwatch",
+          "Countdown timer with 5, 15, 25, 45, and 60 minute presets plus custom durations",
+          "Automatic focus and break interval tracking",
+          "Timestamped split checkpoints",
+          "Live session statistics and completion summaries",
+          "The Focus World visual reward garden",
+          "Vertical activity history timeline with search and filters",
+          "Today, weekly, and monthly analytics",
+          "Custom focus activities with colors and icons",
+          "Local-first persistence across refreshes and sleep",
+          "Dark, light, and system themes",
+          "Full-screen and Zen mode"
+        ],
+        "keywords": "online stopwatch, countdown timer, study timer, deep work tracker, focus timer, break tracker, split timer, focus world",
+        "publisher": {
+          "@type": "Organization",
+          "name": "LaplyGo",
+          "url": "https://laplygo.app/"
+        },
+        "potentialAction": {
+          "@type": "StartAction",
+          "name": "Start a focus session",
+          "target": "https://laplygo.app/"
+        }
+      }
+    </script>
+
+    <!-- Apply the persisted theme before first paint to avoid a flash of the wrong theme. -->
+    <script>
+      ;(() => {
+        try {
+          const settings = JSON.parse(
+            localStorage.getItem('study-stopwatch.settings.v1') || 'null',
+          )
+          const preference = settings && settings.theme ? settings.theme : 'dark'
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isDark = preference === 'dark' || (preference === 'system' && prefersDark)
+          document.documentElement.classList.toggle('dark', isDark)
+          document.documentElement.style.colorScheme = isDark ? 'dark' : 'light'
+          const meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) meta.setAttribute('content', isDark ? '#09090b' : '#f7f7f4')
+        } catch {
+          document.documentElement.classList.add('dark')
+          document.documentElement.style.colorScheme = 'dark'
+        }
+      })()
+    </script>
+  </head>
+  <body class="h-full">
+    <div id="root" class="h-full"></div>
+    <noscript>
+      <main style="font-family: system-ui; max-width: 640px; margin: 8vh auto; padding: 24px">
+        <h1>LaplyGo — Precision Stopwatch, Countdown &amp; Focus Tracker</h1>
+        <p>
+          LaplyGo is a free millisecond-precision stopwatch and countdown timer with
+          automatic focus and break tracking, a calm Focus World, and local-first
+          history. Enable JavaScript to start timing.
+        </p>
+      </main>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
