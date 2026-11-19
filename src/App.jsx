@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   BREAK_PRESET,
