@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   BREAK_PRESET,
@@ -730,6 +730,8 @@ export default function App() {
           to history.
         </p>
       </Modal>
+
+      <Analytics />
     </>
   )
 }
