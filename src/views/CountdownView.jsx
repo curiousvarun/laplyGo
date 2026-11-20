@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 import { COUNTDOWN_PRESETS } from '../constants.js'
 import { PresetPicker } from '../components/timer/PresetPicker.jsx'
-import { FocusWorldCard } from '../components/focus/FocusWorld.jsx'
+import { FocusStudio } from '../components/focus/FocusStudio.jsx'
 import { splitClock } from '../utils/timeFormatters.js'
 import { cx } from '../utils/cx.js'
 
@@ -300,6 +300,13 @@ export function CountdownView({
 
   const isBreak = preset.id === 'break'
   const totalMs = countdown.durationMs
+  const studioStatus = isBreak
+    ? 'resting'
+    : countdown.isRunning
+      ? 'focusing'
+      : countdown.isPaused
+        ? 'resting'
+        : 'idle'
 
   return (
     <div className="mx-auto flex w-full flex-col gap-6 sm:gap-8">
@@ -445,11 +452,12 @@ export function CountdownView({
         ring
       )}
 
-      <FocusWorldCard
+      <FocusStudio
         sessions={sessions}
         liveFocusMs={
           isBreak ? 0 : countdown.isActive ? countdown.elapsedMs : 0
         }
+        status={studioStatus}
         enabled={focusWorldEnabled}
         animate={animationsEnabled && !reducedMotion}
       />

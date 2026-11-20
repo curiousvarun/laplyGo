@@ -54,6 +54,143 @@
   }
 }
 
+/* LaplyGo Living Studio — ambient SVG motion. Opacity/transform only. */
+@keyframes studio-twinkle {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes studio-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(8px, -6px, 0);
+  }
+}
+
+@keyframes studio-steam {
+  0% {
+    opacity: 0;
+    transform: translateY(3px) scaleX(0.7);
+  }
+  25% {
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scaleX(1.15);
+  }
+}
+
+@keyframes studio-rain {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes studio-snow {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+  15% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(10px, 30px, 0);
+  }
+}
+
+@keyframes studio-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes studio-code {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes studio-screen-wave {
+  0%,
+  100% {
+    transform: translateY(-2px);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(2px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes studio-lamp {
+  0%,
+  100% {
+    opacity: 0.62;
+  }
+  48% {
+    opacity: 0.58;
+  }
+  50% {
+    opacity: 0.74;
+  }
+  52% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes studio-string {
+  0%,
+  100% {
+    transform: rotate(0.4deg);
+  }
+  50% {
+    transform: rotate(-0.4deg);
+  }
+}
+
+@keyframes studio-pet {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.035);
+  }
+}
+
 @layer base {
   html {
     height: 100%;
@@ -103,6 +240,111 @@
     transform-box: fill-box;
     transform-origin: center bottom;
     animation: var(--animate-world-sway);
+  }
+
+  .studio-twinkle {
+    animation: studio-twinkle 4.8s ease-in-out infinite;
+  }
+
+  .studio-drift {
+    animation: studio-drift 14s ease-in-out infinite;
+  }
+
+  .studio-steam {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: studio-steam 4.8s ease-in-out infinite;
+  }
+
+  .studio-rain {
+    animation: studio-rain 1.4s linear infinite;
+  }
+
+  .studio-snow {
+    animation: studio-snow 9s linear infinite;
+  }
+
+  .studio-glow {
+    animation: studio-glow 6s ease-in-out infinite;
+  }
+
+  .studio-code {
+    animation: studio-code 4s ease-in-out infinite;
+  }
+
+  .studio-screen-wave {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: studio-screen-wave 8s ease-in-out infinite;
+  }
+
+  .studio-lamp {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: studio-lamp 5s ease-in-out infinite;
+  }
+
+  .studio-string {
+    transform-box: fill-box;
+    transform-origin: top center;
+    animation: studio-string 7s ease-in-out infinite;
+  }
+
+  .studio-pet {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: studio-pet 5.5s ease-in-out infinite;
+  }
+
+  /* Rest mode: calm the room without punishing the user. */
+  .studio-scene.is-resting .studio-steam {
+    animation-duration: 9s;
+    opacity: 0.35;
+  }
+
+  .studio-scene.is-resting .studio-lamp {
+    animation: none;
+    opacity: 0.3;
+  }
+
+  .studio-scene.is-resting .studio-code {
+    animation: none;
+    opacity: 0.18;
+  }
+
+  .studio-scene.is-resting .studio-twinkle {
+    animation-duration: 9s;
+  }
+
+  .studio-scene.is-resting .studio-rain {
+    animation-duration: 3.4s;
+  }
+
+  .studio-scene.is-resting .studio-snow {
+    animation-duration: 16s;
+  }
+
+  .studio-scene.is-resting .studio-glow {
+    animation: none;
+    opacity: 0.45;
+  }
+
+  .studio-scene.is-resting .studio-drift {
+    animation-duration: 26s;
+  }
+
+  .studio-scene.is-resting .studio-pet {
+    animation-duration: 8s;
+  }
+
+  .studio-scene.is-resting .studio-screen-wave {
+    animation-duration: 14s;
+  }
+
+  .studio-scene.is-static *,
+  .studio-scene.is-static *::before,
+  .studio-scene.is-static *::after {
+    animation: none !important;
   }
 
   .no-animations *,

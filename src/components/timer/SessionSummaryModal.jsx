@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import {
+  Building2,
   Check,
   Coffee,
   Copy,
   History,
   RotateCcw,
   Sparkles,
-  Sprout,
   Trophy,
 } from 'lucide-react'
 import { Modal } from '../ui/Modal.jsx'
@@ -18,7 +18,7 @@ import {
   padSequence,
   sessionTimelineEntries,
 } from '../../utils/focusSession.js'
-import { getFocusWorld } from '../../utils/focusWorld.js'
+import { getStudioProgress } from '../../data/studioStages.js'
 import {
   formatDurationShort,
   formatPreciseClock,
@@ -123,7 +123,7 @@ export function SessionSummaryModal({
   const isCountdown = session.source === 'countdown'
   const isBreakSession = isCountdown && session.totalActiveMs === 0
   const primaryMs = isBreakSession ? session.totalBreakMs : session.totalActiveMs
-  const world = getFocusWorld(sessions)
+  const studio = getStudioProgress(sessions)
   const addedFocusMs = session.totalActiveMs
   const addedMinutes = Math.round(addedFocusMs / 60_000)
 
@@ -275,21 +275,21 @@ export function SessionSummaryModal({
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <span className="grid size-10 place-items-center rounded-2xl bg-white/70 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300">
-                  <Sprout className="size-5" aria-hidden="true" />
+                  <Building2 className="size-5" aria-hidden="true" />
                 </span>
                 <div>
                   <p className="text-sm font-bold text-emerald-950 dark:text-emerald-100">
                     {addedFocusMs > 0
                       ? `+${addedMinutes || '<1'} focus ${
                           addedMinutes === 1 ? 'minute' : 'minutes'
-                        } to your Focus World`
-                      : 'Your Focus World is waiting for the next session'}
+                        } to your Focus Studio`
+                      : 'Your Focus Studio is waiting for the next session'}
                   </p>
                   <p className="text-xs text-emerald-900/65 dark:text-emerald-200/60">
-                    {world.level.name}
-                    {world.next
-                      ? ` · ${world.minutesToNext} min to ${world.next.name}`
-                      : ' · fully grown'}
+                    {studio.stage.name}
+                    {studio.nextStage
+                      ? ` · ${studio.minutesToNext} min to ${studio.nextStage.name}`
+                      : ' · fully realized'}
                   </p>
                 </div>
               </div>
@@ -298,13 +298,14 @@ export function SessionSummaryModal({
             <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-emerald-200/60 dark:bg-emerald-950/40">
               <div
                 className="h-full rounded-full bg-emerald-500"
-                style={{ width: `${Math.max(3, world.progress * 100)}%` }}
+                style={{ width: `${Math.max(3, studio.progress * 100)}%` }}
               />
             </div>
             <p className="mt-2 text-[11px] text-emerald-900/60 dark:text-emerald-200/50">
-              Grown by {world.completedSessions}{' '}
-              {world.completedSessions === 1 ? 'session' : 'sessions'} ·{' '}
-              {formatDurationShort(world.totalFocusMs)} total. Nothing wilts if you rest.
+              Built by {studio.completedSessions}{' '}
+              {studio.completedSessions === 1 ? 'session' : 'sessions'} ·{' '}
+              {formatDurationShort(studio.totalFocusMs)} total. Nothing fades if
+              you rest.
             </p>
           </div>
         )}

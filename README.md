@@ -26,15 +26,15 @@ LaplyGo runs entirely in the browser. Sessions, intervals, breaks, splits, count
 - **Automatic focus / break separation** — Pause closes the active focus interval and starts a separately tracked break; Resume closes the break and starts the next focus interval. Break time is never added to active focus time.
 - **Split checkpoints** — log splits during any focus interval; every split keeps its own duration, cumulative active time, and timestamp.
 - **Countdown timer** — preset windows, custom hours/minutes/seconds, a live progress ring, an activity tag, pause/resume, and automatic saving when the countdown reaches zero.
-- **Completion modal** — both modes end with a personalized summary, duration, activity breakdown, Focus World contribution, and quick actions to start another session, take a break, or view history.
-- **Focus World** — a calm garden that grows from saved focus time. No coins, gems, currency, punishment, or loss mechanics. Rest never makes it wilt. It can be turned off in Settings.
+- **Completion modal** — both modes end with a personalized summary, duration, activity breakdown, Focus Studio contribution, and quick actions to start another session, take a break, or view history.
+- **Focus Studio** — a living midnight studio that evolves across five stages as saved focus time accumulates. No coins, gems, currency, punishment, or loss mechanics. Rest never fades it. It can be turned off in Settings.
 - **Default and custom activities** — Studying, Coding, Reading, Writing, Working, and Personal projects are built in. Custom activities support a name, emoji, and color and can be created, renamed, recolored, or removed.
 - **Live session intelligence** — active focus, break time, completed sessions, intervals, averages, and the longest uninterrupted interval.
 - **Vertical activity timeline** — color-coded nodes for focus intervals, breaks, and splits with duration, cumulative time, start and end timestamps, and status.
 - **Refresh-safe timers** — stopwatch and countdown state survive reloads, tab throttling, background tabs, and device sleep.
 - **History search and filters** — search activity/type/date text, filter by date range and activity, and review the full feed.
 - **Analytics** — today/weekly/monthly focus time, session counts, average duration, longest session, top activity, goal progress, streaks, weekly/monthly charts, and activity breakdowns.
-- **Settings that stay useful** — daily goal, target session length, optional reminders, light/dark/system appearance, completion sound, notifications, animations, reduced motion, Focus World visibility, activities, data export/import, privacy notes, and account sync.
+- **Settings that stay useful** — daily goal, target session length, optional reminders, light/dark/system appearance, completion sound, notifications, animations, reduced motion, Focus Studio visibility, activities, data export/import, privacy notes, and account sync.
 - **Full-screen Zen mode** — a distraction-free stopwatch or countdown with keyboard control.
 - **Local-first and private** — no API keys, analytics scripts, or third-party tracking. Data can be exported as a full backup, history JSON, or CSV.
 
@@ -44,7 +44,7 @@ LaplyGo runs entirely in the browser. Sessions, intervals, breaks, splits, count
 - Tailwind CSS 4 via `@tailwindcss/vite`
 - `lucide-react` icons
 - Plus Jakarta Sans via Google Fonts
-- Pure CSS/SVG charts, progress rings, and Focus World scenery — no chart library
+- Pure CSS/SVG charts, progress rings, and Focus Studio scenery — no chart library
 - Canvas-rendered share cards
 - Zero-dependency `localStorage` persistence layer
 
@@ -67,7 +67,7 @@ src/
 ├─ App.jsx                  View routing, timer wiring, dialogs, shortcuts, import/export
 ├─ main.jsx                 React root + ToastProvider
 ├─ constants.js             Branding, storage keys, activities, settings defaults
-├─ index.css                Tailwind import, dark variant, base styles, Focus World motion
+├─ index.css                Tailwind import, dark variant, base styles, studio motion
 │
 ├─ hooks/
 │  ├─ useStopwatch.js       v3 focus/break engine: rAF display, epoch anchors, persistence
@@ -86,15 +86,15 @@ src/
 │  └─ useNow.js             Coarse clock for day rollover
 │
 ├─ views/
-│  ├─ StopwatchView.jsx     Presets, timer stage, live stats, Focus World, timeline
-│  ├─ CountdownView.jsx     Countdown setup, custom duration, progress ring, Focus World
+│  ├─ StopwatchView.jsx     Presets, timer stage, live stats, Focus Studio, timeline
+│  ├─ CountdownView.jsx     Countdown setup, custom duration, progress ring, Focus Studio
 │  ├─ HistoryView.jsx       Search, filters, and a date-grouped vertical activity feed
 │  ├─ AnalyticsView.jsx     Today/week/month metrics, charts, activity split, records
 │  └─ SettingsView.jsx      Sections A–F: goals, appearance, experience, activities, data, account
 │
 ├─ components/
 │  ├─ timer/                Stage, preset picker, live stats, timeline, completion summary
-│  ├─ focus/                Focus World scene and card
+│  ├─ focus/                Focus Studio scene, stages, and environment switcher
 │  ├─ history/              Filter bar and timeline session nodes
 │  ├─ analytics/            Weekly/monthly charts and activity breakdown
 │  ├─ layout/               Shell, top bar, five-destination navigation
@@ -104,7 +104,7 @@ src/
 │
 └─ utils/
    ├─ focusSession.js       Stats aggregation, timeline mapping, share text
-   ├─ focusWorld.js         Focus World levels, plants, and contribution calculations
+   ├─ focusWorld.js         Legacy garden calculations (kept for older backups)
    ├─ presets.js            Preset lookup and normalization
    ├─ sessions.js           Filtering, grouping, stats, streaks, chart data
    ├─ storage.js            Defensive localStorage wrapper
@@ -145,7 +145,7 @@ All data lives in `localStorage` under the `study-stopwatch.*` namespace, kept f
 | `study-stopwatch.timer.v3` | Stopwatch state machine, current clocks, splits, intervals, breaks |
 | `study-stopwatch.countdown.v1` | Countdown preset, duration, remaining clock, completion payload |
 | `study-stopwatch.sessions.v1` | Saved focus intervals, countdown sessions, and breaks, grouped by `sessionId` |
-| `study-stopwatch.settings.v1` | Goals, target session, reminders, theme, feedback, motion, Focus World |
+| `study-stopwatch.settings.v1` | Goals, target session, reminders, theme, feedback, motion, Focus Studio |
 | `study-stopwatch.presets.v1` | Custom activities |
 | `study-stopwatch.auth.v1` | Preview account session |
 | `study-stopwatch.users.v1` | Preview account directory |

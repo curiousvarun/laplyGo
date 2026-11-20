@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react'
 import {
   Bell,
+  Building2,
   Check,
   Cloud,
   Database,
   Download,
   FileJson,
   FileSpreadsheet,
-  Leaf,
   Monitor,
   Moon,
   Palette,
@@ -402,17 +402,17 @@ export function SettingsView({
               </SettingRow>
 
               <SettingRow
-                label="Your Focus World"
-                description="A peaceful visual garden that grows with focus time. Nothing wilts when you rest."
+                label="Focus Studio"
+                description="A living midnight studio that evolves with your focus time. Nothing fades when you rest."
               >
                 <span className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
-                  <Leaf className="size-4 text-emerald-500" aria-hidden="true" />
+                  <Building2 className="size-4 text-emerald-500" aria-hidden="true" />
                   <Switch
                     checked={settings.focusWorldEnabled}
                     onChange={(value) =>
                       updateSettings({ focusWorldEnabled: value })
                     }
-                    label="Show your Focus World"
+                    label="Show your Focus Studio"
                   />
                 </span>
               </SettingRow>

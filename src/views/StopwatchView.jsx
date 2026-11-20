@@ -3,7 +3,7 @@ import { PresetPicker } from '../components/timer/PresetPicker.jsx'
 import { TimerStage } from '../components/timer/TimerStage.jsx'
 import { LiveStats } from '../components/timer/LiveStats.jsx'
 import { ActivityTimeline } from '../components/timer/ActivityTimeline.jsx'
-import { FocusWorldCard } from '../components/focus/FocusWorld.jsx'
+import { FocusStudio } from '../components/focus/FocusStudio.jsx'
 import { computeFocusStats } from '../utils/focusSession.js'
 
 export function StopwatchView({
@@ -67,9 +67,12 @@ export function StopwatchView({
 
       <LiveStats stats={stats} />
 
-      <FocusWorldCard
+      <FocusStudio
         sessions={sessions}
         liveFocusMs={timer.activeMs}
+        status={
+          timer.isRunning ? 'focusing' : timer.isPaused ? 'resting' : 'idle'
+        }
         enabled={focusWorldEnabled}
         animate={animationsEnabled && !reducedMotion}
       />

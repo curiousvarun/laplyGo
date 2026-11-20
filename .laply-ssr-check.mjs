@@ -126,7 +126,7 @@ try {
   )
   const appText = appHtml.replace(/<!--[^>]*-->/g, '').replace(/<[^>]+>/g, '')
   if (!appText.includes('00:00:00.000')) throw new Error('Stopwatch display missing')
-  if (!appHtml.includes('Focus World')) throw new Error('Focus World missing')
+  if (!appHtml.includes('Focus Studio')) throw new Error('Focus Studio missing')
 
   const historyHtml = renderToString(
     h(
